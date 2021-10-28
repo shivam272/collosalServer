@@ -1,0 +1,28 @@
+{
+  "cars": [
+    {
+      "model": "R8",
+      "price": "6700000",
+      "year": "2019",
+      "company": "Audi",
+      "id": 2
+    },
+    {
+      "model": "XF",
+      "price": "1320000",
+      "year": "2013",
+      "company": "Jaguar",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
