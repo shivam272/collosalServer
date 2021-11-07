@@ -1,6 +1,6 @@
 const express = require('express');
 const expressGraphql = require('express-graphql').graphqlHTTP;
-const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList } = require('graphql');
+const { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList, GraphQLNonNull } = require('graphql');
 const { cars, carType, company } = require('./graphQL/CarData');
 const app = express();
 
@@ -72,7 +72,7 @@ const rootQuery = new GraphQLObjectType({
             args: {
                 id: { type: GraphQLInt }
             },
-            resolve: (_, args)=> company.find(el => el.cmpid === args.id),
+            resolve: (_, args) => company.find(el => el.cmpid === args.id),
         },
         companies: { type: GraphQLList(companySchema), resolve: () => company },
         car: {
@@ -93,10 +93,54 @@ const rootQuery = new GraphQLObjectType({
         carTypes: { type: GraphQLList(carTypeSchema), resolve: () => carType },
     }
 
+});
+
+
+const rootMutation = new GraphQLObjectType({
+    name: 'rootMutation',
+    description: 'this will update the data',
+    fields: {
+        carType: {
+            type: carTypeSchema, args: {
+                type: { type: GraphQLNonNull(GraphQLString) },
+            },
+            resolve: (_, args) => {
+                const obj = { typeid: carType.length + 1, type: args.type }
+                carType.push(obj);
+                return obj;
+            }
+        },
+        company: {
+            type: companySchema, args: {
+                country: { type: GraphQLNonNull(GraphQLString) },
+                name: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (_, args) => {
+                const obj = { cmpid: company.length + 1, country: args.country, name: args.name }
+                company.push(obj);
+                return obj;
+            }
+        },
+        cars: {
+            type: carsSchema, args: {
+                typeid: { type: GraphQLNonNull(GraphQLInt) },
+                cmpid: { type: GraphQLNonNull(GraphQLInt) },
+                price: { type: GraphQLNonNull(GraphQLInt) },
+                year: { type: GraphQLNonNull(GraphQLInt) },
+                model: { type: GraphQLNonNull(GraphQLString) }
+            },
+            resolve: (_, args) => {
+                const obj = { carid: cars.length + 1, model: args.model, year: args.year, typeid: args.typeid, cmpid: args.cmpid, price: args.price }
+                cars.push(obj);
+                return obj;
+            }
+        }
+    }
 })
 
 const schema = new GraphQLSchema({
-    query: rootQuery
+    query: rootQuery,
+    mutation: rootMutation
 })
 
 app.use('/graphql', expressGraphql({
