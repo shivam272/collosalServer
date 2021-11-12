@@ -1,5 +1,6 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 const expressGraphql = require("express-graphql").graphqlHTTP;
 const {
   GraphQLObjectType,
@@ -19,6 +20,8 @@ app.listen(4000, () => {
 app.get("/", (_, res) => {
   res.send("request is succesfully sent");
 });
+
+app.use(cors());  // to ensure cors-origin is valid here
 
 const companySchema = new GraphQLObjectType({
   name: "Company",
