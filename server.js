@@ -97,46 +97,60 @@ const rootQuery = new GraphQLObjectType({
 
 
 const rootMutation = new GraphQLObjectType({
-    name: 'rootMutation',
-    description: 'this will update the data',
-    fields: {
-        carType: {
-            type: carTypeSchema, args: {
-                type: { type: GraphQLNonNull(GraphQLString) },
-            },
-            resolve: (_, args) => {
-                const obj = { typeid: carType.length + 1, type: args.type }
-                carType.push(obj);
-                return obj;
-            }
-        },
-        company: {
-            type: companySchema, args: {
-                country: { type: GraphQLNonNull(GraphQLString) },
-                name: { type: GraphQLNonNull(GraphQLString) }
-            },
-            resolve: (_, args) => {
-                const obj = { cmpid: company.length + 1, country: args.country, name: args.name }
-                company.push(obj);
-                return obj;
-            }
-        },
-        cars: {
-            type: carsSchema, args: {
-                typeid: { type: GraphQLNonNull(GraphQLInt) },
-                cmpid: { type: GraphQLNonNull(GraphQLInt) },
-                price: { type: GraphQLNonNull(GraphQLInt) },
-                year: { type: GraphQLNonNull(GraphQLInt) },
-                model: { type: GraphQLNonNull(GraphQLString) }
-            },
-            resolve: (_, args) => {
-                const obj = { carid: cars.length + 1, model: args.model, year: args.year, typeid: args.typeid, cmpid: args.cmpid, price: args.price }
-                cars.push(obj);
-                return obj;
-            }
-        }
-    }
-})
+  name: "rootMutation",
+  description: "this will update the data",
+  fields: {
+    carType: {
+      type: carTypeSchema,
+      args: {
+        type: { type: GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, args) => {
+        const obj = { typeid: carType.length + 1, type: args.type };
+        carType.push(obj);
+        return obj;
+      },
+    },
+    company: {
+      type: companySchema,
+      args: {
+        country: { type: GraphQLNonNull(GraphQLString) },
+        name: { type: GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, args) => {
+        const obj = {
+          cmpid: company.length + 1,
+          country: args.country,
+          name: args.name,
+        };
+        company.push(obj);
+        return obj;
+      },
+    },
+    cars: {
+      type: carsSchema,
+      args: {
+        typeid: { type: GraphQLNonNull(GraphQLInt) },
+        cmpid: { type: GraphQLNonNull(GraphQLInt) },
+        price: { type: GraphQLNonNull(GraphQLInt) },
+        year: { type: GraphQLNonNull(GraphQLInt) },
+        model: { type: GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, args) => {
+        const obj = {
+          carid: cars.length + 1,
+          model: args.model,
+          year: args.year,
+          typeid: args.typeid,
+          cmpid: args.cmpid,
+          price: args.price,
+        };
+        cars.push(obj);
+        return obj;
+      },
+    },
+  },
+});
 
 const schema = new GraphQLSchema({
     query: rootQuery,

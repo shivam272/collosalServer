@@ -15,11 +15,64 @@
       "id": 3
     }
   ],
-  "comments": [
+  "users": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "1",
+      "name": "Shivam",
+      "age": 43,
+      "companyId": 4
+    },
+    {
+      "id": "2",
+      "name": "John",
+      "age": 12,
+      "companyId": 4
+    },
+    {
+      "id": "3",
+      "name": "Harry",
+      "age": 33,
+      "companyId": 4
+    },
+    {
+      "id": "4",
+      "name": "Jackson",
+      "age": 33,
+      "companyId": 2
+    },
+    {
+      "name": "SamuelUpdated",
+      "age": 25,
+      "id": "hKEvaAj",
+      "companyId": 1
+    },
+    {
+      "name": "Samuel",
+      "age": 25,
+      "companyId": 1,
+      "id": "v-JawSK"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Adidas",
+      "country": "Germany"
+    },
+    {
+      "id": "2",
+      "name": "Nike",
+      "country": "US"
+    },
+    {
+      "id": "3",
+      "name": "BMW",
+      "country": "Germany"
+    },
+    {
+      "id": "4",
+      "name": "Porsche",
+      "country": "Germany"
     }
   ],
   "profile": {
