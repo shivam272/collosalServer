@@ -17,12 +17,6 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Shivam",
-      "age": 43,
-      "companyId": 4
-    },
-    {
       "id": "2",
       "name": "John",
       "age": 12,
@@ -57,6 +51,48 @@
       "age": 34,
       "companyId": 1,
       "id": "cp5Sc-G"
+    },
+    {
+      "name": "Samuel",
+      "age": 23,
+      "companyId": 3,
+      "id": "GJF1cBR"
+    },
+    {
+      "name": "shivam",
+      "age": 23,
+      "companyId": 2,
+      "id": "zCQtsF9"
+    },
+    {
+      "name": "james",
+      "age": 45,
+      "companyId": 3,
+      "id": "BaRW_EG"
+    },
+    {
+      "name": "james II",
+      "age": 34,
+      "companyId": 4,
+      "id": "31VX6yB"
+    },
+    {
+      "name": "james III",
+      "age": 12,
+      "companyId": 1,
+      "id": "9OV_Dhu"
+    },
+    {
+      "name": "raghav",
+      "age": 13,
+      "companyId": 3,
+      "id": "fH4Av65"
+    },
+    {
+      "name": "Samuel II",
+      "age": 45,
+      "companyId": 4,
+      "id": "s-HoC_v"
     }
   ],
   "companies": [

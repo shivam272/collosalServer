@@ -95,7 +95,6 @@ const rootQuery = new GraphQLObjectType({
 
 });
 
-
 const rootMutation = new GraphQLObjectType({
   name: "rootMutation",
   description: "this will update the data",

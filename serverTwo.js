@@ -74,7 +74,7 @@ const myRootQuery = new GraphQLObjectType({
     },
     company: {
       type: companySchema,
-      args: { id: { type: GraphQLNonNull(GraphQLInt) } },
+      args: { id: { type: GraphQLNonNull(GraphQLString) } },
       resolve: (_, args) =>
         axios
           .get(`http://localhost:8000/companies/${args.id}`)
@@ -82,7 +82,7 @@ const myRootQuery = new GraphQLObjectType({
     },
     user: {
       type: userSchema,
-      args: { id: { type: GraphQLNonNull(GraphQLInt) } },
+      args: { id: { type: GraphQLNonNull(GraphQLString) } },
       resolve: (_, args) =>
         axios
           .get(`http://localhost:8000/users/${args.id}`)
