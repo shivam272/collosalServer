@@ -17,12 +17,6 @@
   ],
   "users": [
     {
-      "id": "2",
-      "name": "John",
-      "age": 12,
-      "companyId": 4
-    },
-    {
       "id": "3",
       "name": "Harry",
       "age": 33,
@@ -35,10 +29,10 @@
       "companyId": 2
     },
     {
-      "name": "SamuelUpdated",
-      "age": 25,
+      "name": "Samuel",
+      "age": 23,
       "id": "hKEvaAj",
-      "companyId": 1
+      "companyId": 2
     },
     {
       "name": "Samuel",
@@ -65,9 +59,9 @@
       "id": "zCQtsF9"
     },
     {
-      "name": "james",
-      "age": 45,
-      "companyId": 3,
+      "name": "James",
+      "age": 35,
+      "companyId": 4,
       "id": "BaRW_EG"
     },
     {
@@ -83,9 +77,9 @@
       "id": "9OV_Dhu"
     },
     {
-      "name": "raghav",
-      "age": 13,
-      "companyId": 3,
+      "name": "Raghav",
+      "age": 14,
+      "companyId": 2,
       "id": "fH4Av65"
     },
     {
@@ -93,6 +87,24 @@
       "age": 45,
       "companyId": 4,
       "id": "s-HoC_v"
+    },
+    {
+      "name": "Keshav ",
+      "age": 18,
+      "companyId": 3,
+      "id": "ifyZE4j"
+    },
+    {
+      "name": "shivam",
+      "age": 23,
+      "companyId": 1,
+      "id": "qvBcdIA"
+    },
+    {
+      "name": "sdj",
+      "age": 23,
+      "companyId": 0,
+      "id": "OTfr3qJ"
     }
   ],
   "companies": [
@@ -117,7 +129,104 @@
       "country": "Germany"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "deserts": [
+    {
+      "name": "kitkat",
+      "calories": "34",
+      "fats": "4",
+      "carbs": "43",
+      "protein": "4",
+      "price": 20,
+      "id": 1
+    },
+    {
+      "name": "chococake",
+      "calories": "45",
+      "fats": "12",
+      "carbs": "73",
+      "protein": "4",
+      "price": 70,
+      "id": 2
+    },
+    {
+      "name": "cheese cake",
+      "calories": "55",
+      "fats": "21",
+      "carbs": "113",
+      "protein": "8",
+      "price": 170,
+      "id": 3
+    },
+    {
+      "name": "doughnut",
+      "calories": "65",
+      "fats": "17",
+      "carbs": "93",
+      "protein": "9",
+      "price": 110,
+      "id": 4
+    },
+    {
+      "name": "oreo",
+      "calories": "35",
+      "fats": "15",
+      "carbs": "43",
+      "protein": "7",
+      "price": 60,
+      "id": 5
+    },
+    {
+      "name": "Truffle",
+      "calories": "85",
+      "fats": "14",
+      "carbs": "56",
+      "protein": "9",
+      "price": 90,
+      "id": 6
+    },
+    {
+      "name": "Brownie",
+      "calories": "45",
+      "fats": "11",
+      "carbs": "36",
+      "protein": "5",
+      "price": 30,
+      "id": 7
+    },
+    {
+      "name": "Bourbon",
+      "calories": "35",
+      "fats": "9",
+      "carbs": "26",
+      "protein": "3",
+      "price": 10,
+      "id": 8
+    }
+  ],
+  "orders": [
+    {
+      "basketname": "firstOrder",
+      "date": "1637342199727",
+      "totalPrice": 345,
+      "id": 1
+    },
+    {
+      "basketname": "first",
+      "date": "1637353590805",
+      "totalPrice": 240,
+      "id": 2
+    },
+    {
+      "basketname": "all",
+      "date": "1637353670053",
+      "totalPrice": 560,
+      "id": 3
+    },
+    {
+      "basketname": "delete version",
+      "date": "1637353734114",
+      "totalPrice": 170,
+      "id": 4
+    }
+  ]
 }

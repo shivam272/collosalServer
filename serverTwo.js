@@ -58,6 +58,31 @@ const userSchema = new GraphQLObjectType({
   },
 });
 
+const desertSchema = new GraphQLObjectType({
+  name: "Deserts",
+  description: "this is the Desert Schema",
+  fields: {
+    id: { type: GraphQLString },
+    name: { type: GraphQLString },
+    calories: { type: GraphQLString },
+    fats: { type: GraphQLString },
+    carbs: { type: GraphQLString },
+    protein: { type: GraphQLString },
+    price: { type: GraphQLInt },
+  },
+});
+
+const ordersSchema = new GraphQLObjectType({
+  name: "Orders",
+  description: "this is the Order Schema",
+  fields: {
+    id: { type: GraphQLString },
+    basketname: { type: GraphQLString },
+    date: { type: GraphQLString },
+    totalPrice: { type: GraphQLInt },
+  },
+});
+
 const myRootQuery = new GraphQLObjectType({
   name: "rootQuery",
   description: "this is a root query",
@@ -71,6 +96,16 @@ const myRootQuery = new GraphQLObjectType({
       type: new GraphQLList(companySchema),
       resolve: () =>
         axios.get(`http://localhost:8000/companies`).then((res) => res.data),
+    },
+    deserts: {
+      type: new GraphQLList(desertSchema),
+      resolve: () =>
+        axios.get(`http://localhost:8000/deserts`).then((res) => res.data),
+    },
+    orders: {
+      type: new GraphQLList(ordersSchema),
+      resolve: () =>
+        axios.get(`http://localhost:8000/orders`).then((res) => res.data),
     },
     company: {
       type: companySchema,
@@ -86,6 +121,22 @@ const myRootQuery = new GraphQLObjectType({
       resolve: (_, args) =>
         axios
           .get(`http://localhost:8000/users/${args.id}`)
+          .then((res) => res.data),
+    },
+    desert: {
+      type: desertSchema,
+      args: { id: { type: GraphQLNonNull(GraphQLString) } },
+      resolve: (_, args) =>
+        axios
+          .get(`http://localhost:8000/deserts/${args.id}`)
+          .then((res) => res.data),
+    },
+    order: {
+      type: ordersSchema,
+      args: { id: { type: GraphQLNonNull(GraphQLString) } },
+      resolve: (_, args) =>
+        axios
+          .get(`http://localhost:8000/orders/${args.id}`)
           .then((res) => res.data),
     },
   },
@@ -119,6 +170,33 @@ const rootMutation = new GraphQLObjectType({
           .then((res) => {
             return res.data;
           }),
+    },
+    addDesert: {
+      type: desertSchema,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        calories: { type: new GraphQLNonNull(GraphQLString) },
+        fats: { type: new GraphQLNonNull(GraphQLString) },
+        carbs: { type: new GraphQLNonNull(GraphQLString) },
+        protein: { type: new GraphQLNonNull(GraphQLString) },
+        price: { type: new GraphQLNonNull(GraphQLInt) },
+      },
+      resolve: (_, args) =>
+        axios.post(`http://localhost:8000/deserts`, { ...args }).then((res) => {
+          return res.data;
+        }),
+    },
+    addOrder: {
+      type: ordersSchema,
+      args: {
+        basketname: { type: new GraphQLNonNull(GraphQLString) },
+        date: { type: new GraphQLNonNull(GraphQLString) },
+        totalPrice: { type: new GraphQLNonNull(GraphQLInt) },
+      },
+      resolve: (_, args) =>
+        axios.post(`http://localhost:8000/orders`, { ...args }).then((res) => {
+          return res.data;
+        }),
     },
     updateUser: {
       type: userSchema,
