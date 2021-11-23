@@ -160,3 +160,96 @@ app.use('/graphql', expressGraphql({
     schema,
     graphiql: true
 }));
+
+//  "deserts": [
+//     {
+//       "name": "kitkat",
+//       "calories": "34",
+//       "fats": "4",
+//       "carbs": "43",
+//       "protein": "4",
+//       "price": 20,
+//       "id": 1
+//     },
+//     {
+//       "name": "chococake",
+//       "calories": "45",
+//       "fats": "12",
+//       "carbs": "73",
+//       "protein": "4",
+//       "price": 70,
+//       "id": 2
+//     },
+//     {
+//       "name": "cheese cake",
+//       "calories": "55",
+//       "fats": "21",
+//       "carbs": "113",
+//       "protein": "8",
+//       "price": 170,
+//       "id": 3
+//     },
+//     {
+//       "name": "doughnut",
+//       "calories": "65",
+//       "fats": "17",
+//       "carbs": "93",
+//       "protein": "9",
+//       "price": 110,
+//       "id": 4
+//     },
+//     {
+//       "name": "oreo",
+//       "calories": "35",
+//       "fats": "15",
+//       "carbs": "43",
+//       "protein": "7",
+//       "price": 60,
+//       "id": 5
+//     },
+//     {
+//       "name": "Truffle",
+//       "calories": "85",
+//       "fats": "14",
+//       "carbs": "56",
+//       "protein": "9",
+//       "price": 90,
+//       "id": 6
+//     },
+//     {
+//       "name": "Brownie",
+//       "calories": "45",
+//       "fats": "11",
+//       "carbs": "36",
+//       "protein": "5",
+//       "price": 30,
+//       "id": 7
+//     },
+//     {
+//       "name": "Chocolate Pie",
+//       "calories": "335",
+//       "fats": "19",
+//       "carbs": "126",
+//       "protein": "3",
+//       "price": 210,
+//       "id": 8
+//     },
+//     {
+//       "name": "Apple Pie",
+//       "calories": "315",
+//       "fats": "90",
+//       "carbs": "16",
+//       "protein": "3",
+//       "price": 130,
+//       "id": 9
+//     },
+//     {
+//       "name": "Hersheys",
+//       "calories": "25",
+//       "fats": "3",
+//       "carbs": "26",
+//       "protein": "3",
+//       "price": 100,
+//       "id": 10
+//     }
+//   ],

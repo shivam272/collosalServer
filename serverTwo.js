@@ -249,6 +249,32 @@ const rootMutation = new GraphQLObjectType({
             return res.data;
           }),
     },
+
+    deleteDesert: {
+      type: desertSchema,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (_, args) =>
+        axios.delete(`http://localhost:8000/deserts/${args.id}`).then((res) => {
+          return res.data;
+        }),
+    },
+    deleteDeserts: {
+      type: new GraphQLList(desertSchema),
+      args: {
+        ids: { type: new GraphQLList(GraphQLString) },
+      },
+      resolve: async (_, args) => {
+        const promiseList = args.ids.map((id) =>
+          axios.delete(`http://localhost:8000/deserts/${id}`)
+        );
+        const data = await Promise.all(promiseList).then((res) => {
+          return res;
+        });
+        return data;
+      },
+    },
   },
 });
 
