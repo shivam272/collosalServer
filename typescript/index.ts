@@ -89,6 +89,15 @@ class CustomMap {
   }
 }
 
+interface Location {
+  lat: number;
+  lng: number;
+}
+
+const obj = { name: "df", age: 34, location: { lat: 23.43, lng: 45.65 } };
+const data = obj.location as Location;
+
+
 const customMap = new CustomMap(divElement);
 customMap.addMarker(userOne);
 customMap.addMarker(companyOne);
