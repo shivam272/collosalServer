@@ -63,6 +63,7 @@ const companyOne = new Company();
 class CustomMap {
   private googleMap: google.maps.Map;
   propOne: string;
+
   constructor(divElement: HTMLElement) {
     this.propOne = "propOne";
     this.googleMap = new google.maps.Map(divElement, {
@@ -94,10 +95,21 @@ interface Location {
   lng: number;
 }
 
-const obj = { name: "df", age: 34, location: { lat: 23.43, lng: 45.65 } };
-const data = obj.location as Location;
+const obj = {
+  name: "df",
+  age: 34,
+  location: { lat: 23.43, lng: 45.65 },
+};
 
+const { name, age }: { name: string; age: number } = obj;
+const data = obj.location as Location;
 
 const customMap = new CustomMap(divElement);
 customMap.addMarker(userOne);
 customMap.addMarker(companyOne);
+
+const destructure = ({ name, age }: { name: string; age: number }): string => {
+  return `${name} and has age ${age}`;
+};
+
+destructure(obj);
